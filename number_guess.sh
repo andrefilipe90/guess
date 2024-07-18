@@ -1,12 +1,17 @@
 #!/bin/bash
 PSQL="psql -U freecodecamp -d number_guess -t -X -c"
 
+read -p "Enter your username:" USER_NAME
 #while #username -gt 22 long
+while [[ ${#USER_NAME} -gt 22 ]]
+do
   #echo and read username
-  #consider duplicating the echo outside and having the variable created outside
-
+  read -p "Enter your username:" USER_NAME
+done
 
 # query for user name in users
+QUERY_NAME=$($PSQL "SELECT user_id FROM users WHERE name = '$USER_NAME';")
+echo $QUERY_NAME
 # if -z 
   #insert table user input with name
   #echo Welcome fist time
