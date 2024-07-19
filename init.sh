@@ -5,7 +5,7 @@ chmod +x number_guess.sh
 echo '#!/bin/bash' >  number_guess.sh
 git init
 git checkout -b main
-psql -U freecodecamp -d prostgres
+psql -U freecodecamp -d postgres
 CREATE DATABASE number_guess;
 \c number_guess
 CREATE TABLE users(user_id SERIAL PRIMARY KEY, name varchar(22) NOT NULL UNIQUE);
